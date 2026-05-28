@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class AuthService {
 
-  apiUrl = "http://localhost:3000/api/auth";
+  apiUrl = "https://verion-backend.onrender.com";
 
   constructor(private http: HttpClient) {}
 

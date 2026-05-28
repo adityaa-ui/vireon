@@ -1,0 +1,188 @@
+<div class="min-h-screen bg-black text-white relative overflow-hidden p-8">
+
+  <!-- Glow -->
+  <div
+    class="absolute top-[-200px] right-[-100px]
+    w-[500px] h-[500px]
+    bg-orange-500/10 blur-[150px] rounded-full"
+  ></div>
+
+  <!-- Navbar -->
+  <nav
+    class="relative z-20
+    backdrop-blur-xl bg-white/5
+    border border-white/10
+    rounded-full px-8 py-4
+    flex items-center justify-between mb-12"
+  >
+
+    <div class="flex items-center gap-3">
+
+      <img
+  src="verion.png"
+  class="w-12 h-12 object-contain"
+/>
+
+      <h1 class="text-2xl font-semibold">
+        Vireon
+      </h1>
+
+    </div>
+
+    <div class="flex items-center gap-8 text-white/70">
+      <button
+  class="hover:text-white transition">
+  Dashboard
+</button>
+
+      <button
+  (click)="goHome()"
+  class="hover:text-white transition">
+  Home
+</button>
+
+      <button
+      (click)="logout()"
+        class="bg-orange-500 text-black
+        px-5 py-2 rounded-full font-semibold"
+      >
+        Logout
+      </button>
+
+    </div>
+
+  </nav>
+
+  <!-- Hero -->
+  <div class="relative z-20 mb-12">
+
+    <p class="text-orange-400 mb-4">
+      User Dashboard
+    </p>
+
+    <h1
+      class="text-6xl font-bold leading-[0.95]"
+    >
+      Welcome Back.
+      <br />
+      Manage Your Identity.
+    </h1>
+
+  </div>
+
+  <!-- Cards -->
+  <div class="grid grid-cols-3 gap-6 mb-12 relative z-20">
+
+    <div
+      class="bg-white/5 border border-white/10
+      backdrop-blur-xl rounded-3xl p-8"
+    >
+
+      <p class="text-white/50 mb-3">
+        Verification Status
+      </p>
+
+      <h2 class="text-4xl font-bold">
+        Verified
+      </h2>
+
+    </div>
+
+    <div
+      class="bg-white/5 border border-white/10
+      backdrop-blur-xl rounded-3xl p-8"
+    >
+
+      <p class="text-white/50 mb-3">
+        Active Sessions
+      </p>
+
+      <h2 class="text-4xl font-bold">
+        3
+      </h2>
+
+    </div>
+
+    <div
+      class="bg-white/5 border border-white/10
+      backdrop-blur-xl rounded-3xl p-8"
+    >
+
+      <p class="text-white/50 mb-3">
+        Security Score
+      </p>
+
+      <h2 class="text-4xl font-bold">
+        98%
+      </h2>
+
+    </div>
+
+  </div>
+
+  <!-- Activity -->
+  <div
+    class="relative z-20
+    bg-white/5 border border-white/10
+    backdrop-blur-xl rounded-3xl p-8"
+  >
+
+    <h2 class="text-3xl font-bold mb-8">
+      Recent Activity
+    </h2>
+
+    <div
+      class="flex items-center justify-between
+      py-5 border-b border-white/10"
+    >
+
+      <div>
+
+        <h3 class="text-xl font-semibold">
+          Aadhar Verification
+        </h3>
+
+        <p class="text-white/40">
+          Identity successfully verified
+        </p>
+
+      </div>
+
+      <div
+        class="px-5 py-2 rounded-full
+        bg-green-500/20 text-green-400"
+      >
+        Completed
+      </div>
+
+    </div>
+
+    <div
+      class="flex items-center justify-between
+      py-5 border-b border-white/10"
+    >
+
+      <div>
+
+        <h3 class="text-xl font-semibold">
+          Employment Check
+        </h3>
+
+        <p class="text-white/40">
+          Verification in progress
+        </p>
+
+      </div>
+
+      <div
+        class="px-5 py-2 rounded-full
+        bg-yellow-500/20 text-yellow-400"
+      >
+        Pending
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

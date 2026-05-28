@@ -1,0 +1,113 @@
+<div class="min-h-screen bg-black text-white overflow-hidden relative flex items-center justify-center px-6">
+  <div
+    class="absolute top-[-200px] left-[-100px]
+    w-[500px] h-[500px]
+    bg-orange-500/20 blur-[150px] rounded-full"
+  ></div>
+
+  <div
+    class="absolute bottom-[-200px] right-[-100px]
+    w-[500px] h-[500px]
+    bg-white/10 blur-[150px] rounded-full"
+  ></div>
+  <div
+    class="relative z-20
+    w-full max-w-[450px]
+    bg-white/5 backdrop-blur-2xl
+    border border-white/10
+    rounded-[32px] p-10
+    transition-all duration-300
+    hover:scale-[1.01]"
+  >
+    <div class="flex items-center gap-3 mb-8">
+
+      <img
+        src="verion.png"
+        class="w-12 h-12 object-contain
+        drop-shadow-[0_0_20px_rgba(249,115,22,0.5)]"
+      />
+
+      <h1 class="text-3xl font-bold tracking-wide">
+        Verion
+      </h1>
+
+    </div>
+    <p class="text-orange-400 mb-3">
+      Create Account
+    </p>
+
+    <h2 class="text-5xl font-bold leading-tight mb-4">
+      Join The
+      <br />
+      Platform.
+    </h2>
+
+    <p class="text-white/50 mb-10 leading-relaxed">
+      Register securely and access the next generation
+      identity verification infrastructure.
+    </p>
+    <input
+      type="text"
+      placeholder="Username"
+      [(ngModel)]="username"
+      class="w-full p-4 rounded-2xl
+      bg-white/5 border border-white/10
+      outline-none mb-5
+      placeholder:text-white/30"
+    />
+    <div class="relative mb-6">
+
+  <input
+    [type]="showPassword ? 'text' : 'password'"
+    placeholder="Password"
+    [(ngModel)]="password"
+    class="w-full p-4 rounded-2xl
+    bg-white/5 border border-white/10
+    outline-none
+    placeholder:text-white/30"
+  />
+  <button
+    type="button"
+
+    (click)="showPassword = !showPassword"
+    class="absolute right-5 top-1/2
+    -translate-y-1/2 text-white/50
+    hover:text-orange-400
+    transition-all duration-300">
+    {{ showPassword ? 'Hide' : 'Show' }}
+
+  </button>
+
+</div>
+    <button
+      (click)="register()"
+      class="w-full bg-orange-500
+      text-black py-4 rounded-2xl
+      font-semibold hover:scale-[1.02]
+      transition-all duration-300"
+    >
+
+      <span *ngIf="loading">
+        Creating Account...
+      </span>
+
+      <span *ngIf="!loading">
+        Register
+      </span>
+
+    </button>
+    <div class="mt-6 text-center">
+
+      <button
+        routerLink="/"
+        class="text-white/50 hover:text-white
+        transition-all duration-300 text-sm"
+      >
+        Already have an account?
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

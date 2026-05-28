@@ -1,0 +1,352 @@
+<div class="min-h-screen bg-black text-white overflow-hidden relative">
+  <div
+    class="absolute top-[-200px] left-[-100px]
+    w-[500px] h-[500px]
+    bg-orange-500/20 blur-[150px] rounded-full"
+  ></div>
+
+  <div
+    class="absolute bottom-[-200px] right-[-100px]
+    w-[500px] h-[500px]
+    bg-white/10 blur-[150px] rounded-full"
+  ></div>
+  <nav
+    class="fixed top-5 left-1/2 -translate-x-1/2
+    w-[92%] max-w-7xl z-50
+    backdrop-blur-xl bg-white/5
+    border border-white/10
+    rounded-full px-8 py-4
+    flex items-center justify-between"
+  >
+    <div class="flex items-center gap-3">
+
+      <img
+  src="verion.png"
+  class="w-12 h-12 object-contain
+  drop-shadow-[0_0_20px_rgba(249,115,22,0.5)]"
+/>
+
+      <h1 class="text-2xl font-semibold tracking-wide">
+        Vireon
+      </h1>
+    </div>
+   <div class="hidden md:flex items-center gap-10 text-white/70">
+
+  <a class="hover:text-white transition cursor-pointer">
+    Home
+  </a>
+
+  <a
+  href="https://github.com/adityaa-ui"
+  target="_blank"
+  class="hover:text-white transition cursor-pointer"> 
+  class="hover:text-white transition cursor-pointer">
+    Contact
+  </a>
+
+  <a
+  href="https://github.com/adityaa-ui/vireon"
+  target="_blank"
+  class="hover:text-white transition cursor-pointer">
+  Github
+</a>
+
+  <a
+    *ngIf="isLoggedIn"
+    class="hover:text-white transition cursor-pointer"
+  >
+    Dashboard
+  </a>
+
+  <a
+    *ngIf="isAdmin"
+    class="hover:text-orange-400 transition cursor-pointer"
+  >
+    Admin Panel
+  </a>
+
+</div>
+    <button
+      (click)="showLogin = true"
+      class="bg-orange-500 text-black
+      px-6 py-3 rounded-full
+      font-semibold hover:scale-105 transition"
+    >
+      Get Started
+    </button>
+
+  </nav>
+
+  <!-- Hero -->
+  <section
+    class="relative z-10 min-h-screen
+    flex flex-col items-center justify-center
+    text-center px-6"
+  >
+
+    <p class="text-orange-400 mb-6 text-lg tracking-wide">
+      Enterprise Identity Platform
+    </p>
+
+    <h1
+      class="text-7xl md:text-[120px]
+      font-bold leading-[0.9]
+      tracking-tight"
+    >
+      Secure.
+      <br />
+      Verified.
+      <br />
+      VIREON.
+    </h1>
+
+    <p
+      class="text-white/60 text-xl
+      max-w-2xl mt-10 leading-relaxed"
+    >
+
+      Modern identity verification infrastructure
+      with role-based authentication, secure cloud
+      architecture, and enterprise-grade management.
+
+    </p>
+
+    <!-- Floating Chips -->
+    <div class="flex gap-4 mt-14 flex-wrap justify-center">
+
+      <div
+        class="px-6 py-3 rounded-full
+        bg-white/5 border border-white/10
+        backdrop-blur-xl"
+      >
+        Secure
+      </div>
+      <div
+        class="px-6 py-3 rounded-full
+        bg-white/5 border border-white/10
+        backdrop-blur-xl"
+      >
+        Cloud Ready
+      </div>
+
+      <div
+        class="px-6 py-3 rounded-full
+        bg-white/5 border border-white/10
+        backdrop-blur-xl"
+      >
+        Role Based
+      </div>
+
+      <div
+        class="px-6 py-3 rounded-full
+        bg-white/5 border border-white/10
+        backdrop-blur-xl"
+      >
+        Enterprise
+      </div>
+
+    </div>
+
+  </section>
+  <div
+    *ngIf="showLogin"
+    class="fixed inset-0 bg-black/60
+    backdrop-blur-md flex items-center
+    justify-center z-[100]"
+  >
+    <div
+      class="w-[420px]
+      bg-white/10 backdrop-blur-2xl
+      border border-white/10
+      rounded-[32px] p-10 relative"
+    >
+      <button
+        (click)="showLogin = false"
+        class="absolute top-5 right-5
+        text-white/60 hover:text-white"
+      >
+        ✕
+      </button>
+
+      <h2 class="text-4xl font-bold mb-2 text-center mb-2">
+        Welcome!
+      </h2>
+
+      
+
+      <input
+        type="text"
+        placeholder="Username"
+        [(ngModel)]="username"
+        class="w-full p-4 rounded-2xl
+        bg-white/5 border border-white/10
+        outline-none mb-4 placeholder:text-white/30"
+      />
+      <div class="relative mb-6">
+
+      <input
+    [type]="showPassword ? 'text' : 'password'"
+    placeholder="Password"
+    [(ngModel)]="password"
+
+    class="w-full p-4 rounded-2xl
+    bg-white/5 border border-white/10
+    outline-none
+    placeholder:text-white/30"
+  />
+  <button
+    type="button"
+
+    (click)="showPassword = !showPassword"
+
+    class="absolute right-5 top-1/2
+    -translate-y-1/2 text-white/50
+    hover:text-orange-400
+    transition-all duration-300">
+    {{ showPassword ? 'Hide' : 'Show' }}
+  </button>
+
+</div>
+
+      
+      <button
+        (click)="login('General User')"
+        class="w-full bg-orange-500
+        text-black py-4 rounded-2xl
+        font-semibold hover:scale-[1.02]
+        transition"
+      >
+
+        <span *ngIf="loading">
+          Loading...
+        </span>
+
+        <span *ngIf="!loading">
+          Login
+        </span>
+
+      </button>
+      <div class="mt-6 text-center">
+
+        <button
+  (click)="showAdminLogin = true"
+  class="text-orange-400 hover:text-orange-300 text-sm"
+>
+  Login as Admin
+</button>
+<div class="mt-4 text-center">
+
+  <button
+    routerLink="/register"
+    class="text-white/50 hover:text-white
+    transition-all duration-300 text-sm"
+  >
+    New User?
+  </button>
+
+</div>
+
+
+  </div>
+
+</div>
+<!-- Admin Login Modal -->
+<div
+  *ngIf="showAdminLogin"
+  class="fixed inset-0 bg-black/70
+  backdrop-blur-md flex items-center
+  justify-center z-[120]"
+>
+
+  <div
+    class="w-[420px]
+    bg-orange-500/10 backdrop-blur-2xl
+    border border-orange-500/20
+    rounded-[32px] p-10 relative
+    transition-all duration-300"
+  >
+
+    <button
+      (click)="showAdminLogin = false"
+      class="absolute top-5 right-5
+      text-white/60 hover:text-white"
+    >
+      ✕
+    </button>
+
+    <p class="text-orange-400 mb-4">
+      Administrator Access
+    </p>
+
+    <h2 class="text-4xl font-bold mb-2">
+      Welcome Back,
+      <br />
+      Admin.
+    </h2>
+
+    <button
+  class="text-white/60 mb-8
+  hover:text-orange-400
+  transition-all duration-300
+  hover:translate-x-1"
+>
+  Secure system access required
+</button>
+
+    <input
+      type="text"
+      placeholder="Admin Username"
+      [(ngModel)]="username"
+      class="w-full p-4 rounded-2xl
+      bg-white/5 border border-white/10
+      outline-none mb-4
+      placeholder:text-white/30"
+    />
+
+    <div class="relative mb-6">
+
+  <input
+    [type]="showPassword ? 'text' : 'password'"
+    placeholder="Admin Password"
+    [(ngModel)]="password"
+
+    class="w-full p-4 rounded-2xl
+    bg-white/5 border border-white/10
+    outline-none
+    placeholder:text-white/30"
+  />
+
+  <button
+    type="button"
+    (click)="showPassword = !showPassword"
+    class="absolute right-5 top-1/2
+    -translate-y-1/2 text-white/50
+    hover:text-orange-400
+    transition-all duration-300">
+    {{ showPassword ? 'Hide' : 'Show' }}
+
+  </button>
+
+</div>
+
+    <button
+      (click)="login('Admin')"
+      class="w-full bg-orange-500
+      text-black py-4 rounded-2xl
+      font-semibold hover:scale-[1.02]
+      transition"
+    >
+
+      <span *ngIf="loading">
+        Authenticating...
+      </span>
+
+      <span *ngIf="!loading">
+        Enter Admin Panel
+      </span>
+
+    </button>
+
+      </div>
+
+    </div>

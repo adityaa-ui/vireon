@@ -1,0 +1,191 @@
+<div class="min-h-screen bg-black text-white relative overflow-hidden p-8">
+
+  <div
+    class="absolute top-[-200px] left-[-100px]
+    w-[500px] h-[500px]
+    bg-orange-500/10 blur-[150px] rounded-full"
+  ></div>
+
+  <!-- Navbar -->
+  <nav
+    class="relative z-20
+    backdrop-blur-xl bg-white/5
+    border border-white/10
+    rounded-full px-8 py-4
+    flex items-center justify-between mb-12"
+  >
+
+    <div class="flex items-center gap-3">
+
+      <img
+  src="verion.png"
+  class="w-12 h-12 object-contain"
+/>
+
+      <h1 class="text-2xl font-semibold">
+        Vireon Admin
+      </h1>
+
+    </div>
+
+    <div class="flex items-center gap-8 text-white/70">
+
+      <button
+  (click)="goHome()"
+  class="hover:text-white transition">
+  Home
+</button>
+
+      <button
+  class="hover:text-orange-400 transition">
+  Manage Users
+</button>
+
+      <button
+      (click)="logout()"
+        class="bg-orange-500 text-black
+        px-5 py-2 rounded-full font-semibold"
+      >
+        Logout
+      </button>
+
+    </div>
+
+  </nav>
+
+  <!-- Hero -->
+  <div class="relative z-20 mb-12">
+
+    <p class="text-orange-400 mb-4">
+      Administrator Control
+    </p>
+
+    <h1
+      class="text-6xl font-bold leading-[0.95]"
+    >
+      Platform
+      <br />
+      Infrastructure.
+    </h1>
+
+  </div>
+
+  <!-- Stats -->
+  <div class="grid grid-cols-3 gap-6 mb-12 relative z-20">
+
+    <div
+      class="bg-white/5 border border-white/10
+      backdrop-blur-xl rounded-3xl p-8"
+    >
+
+      <p class="text-white/50 mb-3">
+        Total Users
+      </p>
+
+      <h2 class="text-5xl font-bold">
+        {{ users.length }}
+      </h2>
+
+    </div>
+
+    <div
+      class="bg-white/5 border border-white/10
+      backdrop-blur-xl rounded-3xl p-8"
+    >
+
+      <p class="text-white/50 mb-3">
+        Active Verifications
+      </p>
+
+      <h2 class="text-5xl font-bold">
+        24
+      </h2>
+
+    </div>
+
+    <div
+      class="bg-white/5 border border-white/10
+      backdrop-blur-xl rounded-3xl p-8"
+    >
+
+      <p class="text-white/50 mb-3">
+        Security Rating
+      </p>
+
+      <h2 class="text-5xl font-bold">
+        99%
+      </h2>
+
+    </div>
+
+  </div>
+  <div
+  id="users-section"
+    class="relative z-20
+    bg-white/5 border border-white/10
+    backdrop-blur-xl rounded-3xl p-8"
+  >
+
+    <div class="flex items-center justify-between mb-8">
+
+      <h2 class="text-3xl font-bold">
+        User Database
+      </h2>
+
+      <button
+      (click)="goToRegister()"
+        class="bg-orange-500 text-black
+        px-5 py-3 rounded-full font-semibold"
+      >
+        Add User
+      </button>
+
+    </div>
+
+    <div *ngIf="loading">
+      Loading Users...
+    </div>
+
+    <div *ngIf="!loading">
+
+      <div
+        *ngFor="let user of users"
+        class="flex items-center justify-between
+        py-5 border-b border-white/10"
+      >
+
+        <div>
+
+          <h3 class="text-xl font-semibold">
+            {{ user.username }}
+          </h3>
+
+          <p class="text-white/40">
+            Registered Platform User
+          </p>
+
+        </div>
+
+        <div
+          class="px-5 py-2 rounded-full text-sm"
+
+          [ngClass]="{
+            'bg-orange-500/20 text-orange-400':
+            user.role === 'Admin',
+
+            'bg-blue-500/20 text-blue-400':
+            user.role === 'General User'
+          }"
+        >
+
+          {{ user.role }}
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,55 +1,134 @@
-## Development server
+# Verion – Role-Based Identity Verification Platform
 
-To start a local development server, run:
+## Overview
 
-```bash
+Verion is a full-stack role-based authentication and user management platform built using Angular, Node.js, Express, MongoDB Atlas, and Tailwind CSS.
+
+The application provides secure user registration, authentication, role-based access control, user management, and cloud deployment. It demonstrates modern frontend architecture, REST API integration, database connectivity, and deployment practices.
+
+---
+
+## Live Demo
+
+Frontend: https://vireonn.vercel.app
+
+Backend API: https://vireon-ha8n.onrender.com
+
+---
+
+## Features
+
+### Authentication
+
+* User Registration
+* User Login
+* Admin Login
+* Role-Based Authentication
+* Logout Functionality
+* Password Visibility Toggle
+
+### User Dashboard
+
+* Personalized Dashboard
+* User Information Display
+* Verification Status Cards
+* Activity Section
+
+### Admin Dashboard
+
+* View Registered Users
+* User Management Interface
+* Access Control Based on Roles
+* Dynamic User Listing from Database
+
+### Backend Features
+
+* REST APIs using Express.js
+* MongoDB Atlas Integration
+* Async API Processing
+* Modular Route Architecture
+* Environment Variable Configuration
+
+### UI/UX
+
+* Modern SaaS-inspired Design
+* Glassmorphism Effects
+* Responsive Layout
+* Tailwind CSS Styling
+* Interactive Navigation
+
+---
+
+## Tech Stack
+
+### Frontend
+
+* Angular
+* TypeScript
+* Tailwind CSS
+
+### Backend
+
+* Node.js
+* Express.js
+
+### Database
+
+* MongoDB Atlas
+
+### Deployment
+
+* Vercel (Frontend)
+* Render (Backend)
+
+---
+
+## Project Structure
+
+frontend/
+
+* Angular Application
+* Components
+* Services
+* Routing
+
+backend/
+
+* Express Server
+* Routes
+* Models
+* MongoDB Configuration
+
+---
+
+## Installation
+
+### Clone Repository
+
+git clone [repository-url]
+
+### Frontend
+
+cd wonderland-app
+
+npm install
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Backend
 
-## Code scaffolding
+cd backend
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+npm install
 
-```bash
-ng generate component component-name
-```
+node server.js
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Author
 
-## Building
+Aditya
 
-To build the project run:
+GitHub: https://github.com/adityaa-ui
+LinkedIn: https://www.linkedin.com/in/adityasinghdex
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

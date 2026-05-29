@@ -15,6 +15,42 @@ Frontend: https://vireonn.vercel.app
 Backend API: https://vireon-ha8n.onrender.com
 
 ---
+## Test Credentials
+
+### Admin Account
+
+Username: admin
+
+Password: VireonAdmin@2026
+
+Role: Admin
+
+---
+
+### General User Account
+
+Username: user
+
+Password: UserSecure@2026
+
+Role: General User
+
+---
+### Dynamic User Registration
+
+The platform allows new users to create accounts through the registration page.
+
+When a user registers:
+
+* Account details are stored in MongoDB Atlas.
+* Newly registered users can immediately log in to the platform.
+* Registered users automatically appear in the Admin Dashboard.
+* User records are fetched dynamically from the database through REST APIs.
+* No code changes are required to add new users.
+
+This demonstrates real-time database integration and dynamic user management functionality.
+
+---
 
 ## Features
 

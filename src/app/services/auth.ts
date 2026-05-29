@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class AuthService {
 
-  apiUrl = "https://vireon-ha8n.onrender.com/api/users";
+  apiUrl = "https://vireon-ha8n.onrender.com/api/auth";
 
   constructor(private http: HttpClient) {}
 

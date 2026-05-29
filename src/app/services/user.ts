@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class UserService {
 
-  apiUrl = "https://verion-backend.onrender.com";
+  apiUrl = "https://vireon-ha8n.onrender.com";
 
   constructor(private http: HttpClient) {}
 

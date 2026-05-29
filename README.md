@@ -105,7 +105,7 @@ backend/
 
 ### Clone Repository
 
-git clone [repository-url]
+git clone https://github.com/adityaa-ui/vireon.git
 
 ### Frontend
 
